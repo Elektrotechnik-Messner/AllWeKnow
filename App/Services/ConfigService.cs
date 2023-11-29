@@ -7,25 +7,21 @@
  */
 
 using AllWeKnow.App.Configuration;
+using AllWeKnow.App.Helpers;
 using Newtonsoft.Json;
 
 namespace AllWeKnow.App.Services;
 
 public class ConfigService
 {
-    private readonly string Path = "storage/config.json";
+    private readonly string Path = PathBuilder.File("storage", "config.json");
     private ConfigModel Data;
     
     public ConfigService()
     {
-        if(!Directory.Exists("storage"))
-        {
-            Directory.CreateDirectory(  "storage");
-        }
-        
         Reload();
     }
-
+    
     public void Reload()
     {
         if(!File.Exists(Path))

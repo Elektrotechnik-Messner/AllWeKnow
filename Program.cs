@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using AllWeKnow.App.Services;
 using AllWeKnow.App.Repository;
+using Microsoft.EntityFrameworkCore.Design;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,7 @@ builder.Services.AddServerSideBlazor();
 
 //Services
 
-builder.Services.AddScoped<ConfigService>();
+builder.Services.AddSingleton<ConfigService>();
 
 Directory.CreateDirectory(PathBuilder.Dir("storage"));
 
@@ -27,6 +28,7 @@ builder.Services.AddScoped(typeof(Repository<>));
 
 
 var app = builder.Build();
+
 
 
 // Configure the HTTP request pipeline.
@@ -45,5 +47,7 @@ app.UseRouting();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+
+app.Services.GetRequiredService<ConfigService>();
 
 app.Run();
