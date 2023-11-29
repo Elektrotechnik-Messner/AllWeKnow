@@ -7,7 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03f04c24-2969-4cd9-8b9f-dbb6d9bf704c" name="Changes" comment="" />
+    <list default="true" id="03f04c24-2969-4cd9-8b9f-dbb6d9bf704c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Database/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Database/DatabaseContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +19,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5330988bfaacf93f15e30f9b3dd6018a768f89da3b38d874fda77299c62164/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -30,6 +37,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/papagei/Dokumente/GitHub/Elektrtechnik-Messner/AllWeKnow",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -43,9 +51,9 @@
       "Angular2Svg"
     ],
     "rider.external.source.directories": [
-      "C:\\Users\\morit\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\morit\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\morit\\AppData\\Local\\Symbols\\src"
+      "/home/papagei/.config/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
+      "/home/papagei/.config/JetBrains/Rider2023.2/resharper-host/SourcesCache",
+      "/home/papagei/.local/share/Symbols/src"
     ]
   }
 }]]></component>
@@ -104,6 +112,7 @@
       <workItem from="1701197892617" duration="884000" />
       <workItem from="1701237007690" duration="554000" />
       <workItem from="1701237573129" duration="1437000" />
+      <workItem from="1701272341746" duration="843000" />
     </task>
     <servers />
   </component>
