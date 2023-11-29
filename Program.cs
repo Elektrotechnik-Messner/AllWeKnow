@@ -12,11 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
-// Use Config Service
-var configService = new ConfigService();
-
 // Database
 builder.Services.AddDbContext<DataContext>();
+
+//Services
+builder.Services.AddScoped<ConfigService>();
 
 Directory.CreateDirectory(PathBuilder.Dir("storage"));
 

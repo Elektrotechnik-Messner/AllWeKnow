@@ -27,6 +27,7 @@ public class DataContext : DbContext
     public DbSet<Subject> Subjects { get; set; }
     public DbSet<Setting> Settings { get; set; }
 
+    
     public DataContext(ConfigService configService)
     {
         ConfigService = configService;
