@@ -12,21 +12,21 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
-// Database
-builder.Services.AddDbContext<DataContext>();
+
 
 //Services
+
 builder.Services.AddScoped<ConfigService>();
 
 Directory.CreateDirectory(PathBuilder.Dir("storage"));
+
+// Database
+builder.Services.AddDbContext<DataContext>();
 
 builder.Services.AddScoped(typeof(Repository<>));
 
 
 var app = builder.Build();
-
-
-
 
 
 // Configure the HTTP request pipeline.
