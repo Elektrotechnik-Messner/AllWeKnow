@@ -8,16 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03f04c24-2969-4cd9-8b9f-dbb6d9bf704c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/efCoreCommonOptions.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/efCoreDialogsState.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Database/Migrations/20231129164825_Initial.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Database/Migrations/20231129164825_Initial.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Database/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Services/UserService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shared/Components/Partials/LazyLoader.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AllWeKnow.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AllWeKnow.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Database/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Database/DatabaseContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Services/ConfigService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Services/ConfigService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/_Imports.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ToolWindowBuild.ShowToolbar": "false",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/papagei/Dokumente/GitHub/Elektrtechnik-Messner/AllWeKnow",
@@ -130,7 +127,7 @@
       <workItem from="1701272341746" duration="843000" />
       <workItem from="1701273614931" duration="347000" />
       <workItem from="1701274001811" duration="369000" />
-      <workItem from="1701274415047" duration="2463000" />
+      <workItem from="1701274415047" duration="4043000" />
     </task>
     <servers />
   </component>
