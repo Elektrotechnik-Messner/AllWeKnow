@@ -6,6 +6,7 @@
  * LICENSE.md https://github.com/Moonlight-Panel/Moonlight/blob/main/LICENSE.md
  */
 
+using AllWeKnow.App.Database.Models;
 using AllWeKnow.App.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,17 +17,15 @@ public class DataContext : DbContext
     private readonly ConfigService ConfigService;
     
     //Ref
-    //public Repository<UserModel> User;
+    //public Repository<User> User;
     //Exm: (Can be Null)
-    //User.Get().FirstOrDefault(x => x.Username == "NevaGonnaGiveYouUp");
+    //Users.Get().FirstOrDefault(x => x.Username == "NevaGonnaGiveYouUp");
     
     //Models
-    //public DbSet<User> Users { get; set; }
-    //public DbSet<BlogPost> BlogPost { get; set; }
-    //public DbSet<SettingsModel> SettingsModel { get; set; }
-    //public DbSet<SubjectModel> SubjectModel { get; set; }
-    //public DbSet<UploadResult> UploadResult { get; set; }
-    //public DbSet<UserModel> UserModel { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<Article> Articles { get; set; }
+    public DbSet<Subject> Subjects { get; set; }
+    public DbSet<Setting> Settings { get; set; }
 
     public DataContext(ConfigService configService)
     {
