@@ -26,6 +26,9 @@ builder.Services.AddDbContext<DataContext>();
 
 builder.Services.AddScoped(typeof(Repository<>));
 
+// Users
+builder.Services.AddScoped<UserService>();
+
 
 var app = builder.Build();
 
