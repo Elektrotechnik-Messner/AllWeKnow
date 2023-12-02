@@ -8,10 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03f04c24-2969-4cd9-8b9f-dbb6d9bf704c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Database/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Database/DatabaseContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Services/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Index.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Services/ArticleService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Services/SettingsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Services/SubjectService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,6 +134,7 @@
       <workItem from="1701499706117" duration="27000" />
       <workItem from="1701540803185" duration="1291000" />
       <workItem from="1701551268012" duration="520000" />
+      <workItem from="1701554038320" duration="628000" />
     </task>
     <servers />
   </component>

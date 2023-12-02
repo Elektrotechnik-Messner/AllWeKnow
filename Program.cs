@@ -28,6 +28,12 @@ builder.Services.AddScoped(typeof(Repository<>));
 
 // Users
 builder.Services.AddScoped<UserService>();
+// Articles
+builder.Services.AddScoped<ArticleService>();  
+// Subjects
+builder.Services.AddScoped<SubjectService>();
+// Settings
+builder.Services.AddScoped<SettingsService>();
 
 
 var app = builder.Build();
