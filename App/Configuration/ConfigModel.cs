@@ -15,12 +15,12 @@ public class ConfigModel
         public int Port { get; set; } = 3306;
         
         [JsonProperty("Username")]
-        public string Username { get; set; } = "moonlight_user";
+        public string Username { get; set; } = "db_user";
         
         [JsonProperty("Password")]
         public string Password { get; set; } = "s3cr3t";
         
         [JsonProperty("Database")]
-        public string Database { get; set; } = "moonlight_db";
+        public string Database { get; set; } = "database";
     }
 }
