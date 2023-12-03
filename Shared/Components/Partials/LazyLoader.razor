@@ -6,7 +6,7 @@
  * LICENSE.md https://github.com/Moonlight-Panel/Moonlight/blob/main/LICENSE.md
  *@
 
-@if (loaded)
+@if (Loaded)
 {
     @ChildContent
 }
@@ -21,22 +21,22 @@ else
 @code
 {
     [Parameter]
-    public RenderFragment ChildContent { get; set; }
-    
+    public RenderFragment? ChildContent { get; set; }
+
     [Parameter]
     public Func<LazyLoader, Task> Load { get; set; }
 
     [Parameter]
     public string Text { get; set; } = "";
 
-    private bool loaded = false;
+    private bool Loaded = false;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             await Load.Invoke(this);
-            loaded = true;
+            Loaded = true;
             await InvokeAsync(StateHasChanged);
         }
     }
@@ -49,10 +49,10 @@ else
 
     public async Task Reload()
     {
-        loaded = false;
+        Loaded = false;
         await InvokeAsync(StateHasChanged);
         await Load.Invoke(this);
-        loaded = true;
+        Loaded = true;
         await InvokeAsync(StateHasChanged);
     }
 }
