@@ -19,10 +19,11 @@ public class SettingsService
 
     public Setting GetByName(string name)
     {
-        return Settings.Get().FirstOrDefault(x => x.Name == name);
+        return Settings.Get().FirstOrDefault(x => x.Name == name)!;
     }
-    public Setting GetById(string id)
+
+    public void Edit(string? name, string value)
     {
-        return Settings.Get().FirstOrDefault(x => x.Id == id);
+        throw new NotImplementedException();
     }
 }

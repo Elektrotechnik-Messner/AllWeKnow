@@ -19,6 +19,15 @@ public class ArticleService
     
     public Article GetById(int id)
     {
-        return Articles.Get().FirstOrDefault(x => x.Id == id);
-    }     
+        return Articles.Get().FirstOrDefault(x => x.Id == id)!;
+    }
+
+    public Article GetRandom(int? status)
+    {
+        Random random = new Random();
+
+        List<Article> articles = status is not null ? Articles.Get().Where(x => x.Status == status).ToList() : Articles.Get().ToList();
+        
+        return articles[random.Next(articles.Count)];
+    }
 }
