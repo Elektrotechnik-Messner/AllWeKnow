@@ -22,8 +22,17 @@ public class SettingsService
         return Settings.Get().FirstOrDefault(x => x.Name == name)!;
     }
 
-    public void Edit(string? name, string value)
+    public void Edit(int id, string name, string value)
     {
-        throw new NotImplementedException();
+
+        if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(value))
+            return;
+        
+        Setting setting = Settings.Get().First(x => x.Id == id);
+
+        setting.Name = name;
+        setting.Value = value;
+        
+        Settings.Update(setting);
     }
 }
