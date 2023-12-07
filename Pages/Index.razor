@@ -7,28 +7,18 @@
 @using Microsoft.AspNetCore.Components.Web
 @inject UserService UserService
 @inject ArticleService ArticleService
+@inject SubjectService SubjectService
+@inject NavigationManager navigationManager
 
 <PageTitle>Index</PageTitle>
 
 <h1>Hello, world!</h1>
 
-<LazyLoader Load="Load">
-   @randomArticle.Id.ToString()
-</LazyLoader>
 
 
 @code {
    
-   private Article? randomArticle;
-
-   
-
-   public Task Load(LazyLoader arg)
-   {
-      randomArticle = ArticleService.GetRandom();
-      
-      return Task.CompletedTask;
-   }
+    
 
 }
 

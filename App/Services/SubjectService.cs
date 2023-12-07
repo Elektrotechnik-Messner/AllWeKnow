@@ -16,4 +16,24 @@ public class SubjectService
     {
         return Subjects.Get().ToList();
     }
+
+    public Subject GetById(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void New(string name)
+    {
+        if (string.IsNullOrEmpty(name)) 
+            return;
+        
+        
+        Subject newsubjetct = new Subject()
+        {
+            Name = name
+        };
+
+        Subjects.Add(newsubjetct);
+
+    }
 }
