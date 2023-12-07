@@ -6,33 +6,26 @@
 @using AllWeKnow.App.Services
 @using Microsoft.AspNetCore.Components.Web
 @inject UserService UserService
+@inject ArticleService ArticleService
 
 <PageTitle>Index</PageTitle>
 
 <h1>Hello, world!</h1>
 
 <LazyLoader Load="Load">
-   @userfromid.Rights
+   @randomArticle.Id.ToString()
 </LazyLoader>
 
 
 @code {
    
+   private Article? randomArticle;
+
    
-   string username;
-   User userfromid;
 
    public Task Load(LazyLoader arg)
    {
-      var users = UserService.GetAllUsers();
-      
-      foreach (var user in users.ToList())
-      {
-         Console.WriteLine(user.Fullname);
-      }
-      userfromid = UserService.GetUserById(1);
-      
-
+      randomArticle = ArticleService.GetRandom();
       
       return Task.CompletedTask;
    }
