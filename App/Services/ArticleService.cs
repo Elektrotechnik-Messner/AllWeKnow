@@ -8,22 +8,24 @@ public class ArticleService
 
     public Repository<Article?> Articles;
 
-    private string username = null;
-
     public ArticleService(Repository<Article?> articles)
     {
         Articles = articles;
     }
 
-    public List<Article?> GetAll(int status = 1)
+    public List<Article?> GetAll()
     {
+        return Articles.Get().ToList();
+    }
 
+    public List<Article?> GetAllWithStatus(int status)
+    {
         return Articles.Get().Where(x => x.Status == status).ToList();
-    } 
-    
+    }
+
     public Article? GetById(int id)
     {
-        return Articles.Get().FirstOrDefault(x => x.Id == id)!;
+        return Articles.Get().First(x => x.Id == id)!;
     }
 
     public Article? GetRandom(int status = 1) {
@@ -35,18 +37,14 @@ public class ArticleService
         
         if (allIds.Count == 0) 
             return null;
-        
-        int randomId = allIds[random.Next(allIds.Count)];
 
-        randomArticle = Articles.Get().FirstOrDefault(x => x.Id == randomId && x.Status == status)!;
-        
+        randomArticle = Articles.Get().FirstOrDefault(x => x.Id == allIds[random.Next(allIds.Count)] && x.Status == status)!;
         
         return randomArticle;
-        
     }
 
     public void New(Article newArticle)
     {
-        return;
+        Articles.Add(newArticle);
     }
 }

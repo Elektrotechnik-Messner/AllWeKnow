@@ -1,0 +1,39 @@
+div.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    z-index: 23984092384;
+}
+
+.loader-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.spinner {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+    border: 0.2rem solid #8b8b8b;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

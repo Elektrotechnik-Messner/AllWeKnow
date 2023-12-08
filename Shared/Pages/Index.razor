@@ -1,0 +1,35 @@
+﻿@page "/"
+@using AllWeKnow.App.Services
+@using AllWeKnow.App.Database
+@using AllWeKnow.App.Database.Models
+@using AllWeKnow.App.Repository
+@using AllWeKnow.App.Services
+@using Microsoft.AspNetCore.Components.Web
+@inject SettingsService SettingsService
+
+
+
+<Title>Home</Title>
+
+<LazyLoader Load="Load">
+    
+    
+    
+
+</LazyLoader>
+
+
+
+@code {
+
+    private string appTitle;
+
+    private async Task Load(LazyLoader arg)
+    {
+        appTitle = SettingsService.GetByName("apptitle").Value;
+        
+    }
+
+}
+
+

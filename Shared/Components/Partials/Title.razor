@@ -1,0 +1,30 @@
+@using AllWeKnow.App.Services
+@inject SettingsService SettingsService
+
+@if (string.IsNullOrEmpty(appName))
+{
+    <PageTitle>Lädt...</PageTitle>
+}
+else
+{
+    
+    <PageTitle>@ChildContent - @appName</PageTitle>
+}
+
+
+@code {
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    private string appName;
+
+
+    protected override Task OnInitializedAsync()
+    {
+        appName = SettingsService.GetByName("appname").Value;
+        return InvokeAsync(StateHasChanged);
+    }
+
+
+}

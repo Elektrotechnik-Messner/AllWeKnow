@@ -1,0 +1,41 @@
+@inject NavigationManager NavManager
+
+<nav class="navbar">
+      <div class="content">
+        <div class="bar">
+          <div class="logo"><span class="logo"></span><b>@Title</b></div>
+          <span class="navbtn" @onclick="ToggleUnfold">
+            <span class="navbtn-container">
+              <span class="bar1"></span>
+              <span class="bar2"></span>
+              <span class="bar3"></span>
+              </span>
+          </span>
+        </div>
+        <div class="contents@(Unfolded ? " active" : "")">
+          <div class="links">
+            
+            <a href="/">Home</a>
+            <a href="/alle-artikel">Alle Artikel</a>
+            <a href="/alle-fächer">Alle Fächer</a>
+            <a href="/test"><button>Login</button></a>
+
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+
+@code {
+
+  [Parameter]
+  public string Title { get; set; } = "";
+
+  public bool Unfolded = false;
+
+  public void ToggleUnfold()
+  {
+    Unfolded = !Unfolded;
+  }
+
+}

@@ -19,7 +19,7 @@ public class SubjectService
 
     public Subject GetById(int id)
     {
-        throw new NotImplementedException();
+        return Subjects.Get().First(x => x.Id == id);
     }
 
     public void New(string name)

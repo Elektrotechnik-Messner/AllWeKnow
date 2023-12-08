@@ -1,19 +1,44 @@
-﻿@inherits LayoutComponentBase
+﻿@using AllWeKnow.App.Services
+@inherits LayoutComponentBase
 
-<PageTitle>AllWeApp</PageTitle>
+@inject SettingsService SettingsService
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
+
+<PageTitle>Wird geladen...</PageTitle>
+
+@if (initialized)
+{
+    <NavBar Title="@appName"/>
+
+    <div class="container">
+        @Body
     </div>
+}
+else
+{
+    <Loader/>
+}
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+
+@code {
+
+    private bool initialized = false;
+
+    private string appName = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        appName = SettingsService.GetByName("appname")!.Value!;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            initialized = true;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+}

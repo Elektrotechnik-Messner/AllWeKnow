@@ -16,10 +16,10 @@ public class DataContext : DbContext
 {
     private readonly ConfigService ConfigService;
 
-    public DbSet<User> Users { get; set; }
-    public DbSet<Article> Articles { get; set; }
-    public DbSet<Subject> Subjects { get; set; }
-    public DbSet<Setting> Settings { get; set; }
+    public DbSet<User>? Users { get; set; }
+    public DbSet<Article>? Articles { get; set; }
+    public DbSet<Subject>? Subjects { get; set; }
+    public DbSet<Setting>? Settings { get; set; }
     
     public DataContext(ConfigService configService)
     {

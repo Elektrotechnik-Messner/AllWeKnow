@@ -6,7 +6,8 @@ namespace AllWeKnow.App.Services;
 public class SettingsService
 {
     public Repository<Setting> Settings;
-
+    
+    
     public SettingsService(Repository<Setting> settings)
     {
         Settings = settings;
@@ -17,9 +18,9 @@ public class SettingsService
         return Settings.Get().ToList();
     }
 
-    public Setting GetByName(string name)
+    public Setting? GetByName(string name)
     {
-        return Settings.Get().FirstOrDefault(x => x.Name == name)!;
+        return Settings.Get().FirstOrDefault(x => x.Name == name);
     }
 
     public void Edit(int id, string name, string value)
