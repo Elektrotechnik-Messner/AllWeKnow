@@ -15,22 +15,12 @@ namespace AllWeKnow.App.Database;
 public class DataContext : DbContext
 {
     private readonly ConfigService ConfigService;
-    
-    //Ref
-    //public Repository<User> User;
-    //Exm: (Can be Null)
-    //Users.Get().FirstOrDefault(x => x.Username == "NevaGonnaGiveYouUp");
-    
-    //Models
-    
+
     public DbSet<User> Users { get; set; }
     public DbSet<Article> Articles { get; set; }
     public DbSet<Subject> Subjects { get; set; }
     public DbSet<Setting> Settings { get; set; }
     
-    
-    
-
     public DataContext(ConfigService configService)
     {
         ConfigService = configService;
