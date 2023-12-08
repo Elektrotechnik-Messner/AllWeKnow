@@ -28,7 +28,7 @@ public class ArticleService
 
     public Article? GetRandom(int status = 1) {
         
-        Random random = new Random();
+        Random random = new();
         Article? randomArticle;
         
         List<int> allIds = Articles.Get().Where(x => x.Status == status).Select(x => x.Id).ToList();
@@ -43,5 +43,10 @@ public class ArticleService
         
         return randomArticle;
         
+    }
+
+    public void New(Article newArticle)
+    {
+        return;
     }
 }
