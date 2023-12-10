@@ -4,7 +4,10 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using AllWeKnow.App.Services;
 using AllWeKnow.App.Repository;
+using AllWeKnow.App.Services.Partials;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +15,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-
-
 
 //Services
 
@@ -36,7 +37,8 @@ builder.Services.AddScoped<ArticleService>();
 builder.Services.AddScoped<SubjectService>();
 // Settings
 builder.Services.AddScoped<SettingsService>();
-
+// Jokes
+builder.Services.AddScoped<JokeService>();
 
 var app = builder.Build();
 

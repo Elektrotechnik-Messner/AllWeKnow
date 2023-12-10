@@ -1,3 +1,6 @@
+@using AllWeKnow.App.Services.Partials
+@inject JokeService JokeService
+
 <div class="loader">
   <div class="loader-div">
           <span class="spinner"></span>
@@ -7,6 +10,13 @@
 
 
 @code {
-    /*[Parameter]*/
-    public string Joke = /*{ get; set; } =*/ "Joke";
+
+    private string Joke = "";
+
+    protected override void OnInitialized()
+    {
+        Joke = JokeService.GetJoke();
+
+    }
+
 }
