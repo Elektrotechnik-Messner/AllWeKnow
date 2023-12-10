@@ -23,4 +23,22 @@ public class ConfigModel
         [JsonProperty("Database")]
         public string Database { get; set; } = "database";
     }
+    
+    [JsonProperty("Settings")] public SettingsData Settings { get; set; } = new();
+    
+    public class SettingsData
+    {
+        [JsonProperty("Name")]
+        public string AppName { get; set; } = "App Name";
+        
+        [JsonProperty("Title")]
+        public string AppTitle { get; set; } = "Title";
+        
+        [JsonProperty("MaxPostsShowing")]
+        public int MaxPostsShowing { get; set; } = 5;
+        
+        // TODO: Add option (bool) to Authorities (teachers) be able to check on new posts, add a name for these authorities (teacher, chef, etc...)
+        
+    }
+    
 }

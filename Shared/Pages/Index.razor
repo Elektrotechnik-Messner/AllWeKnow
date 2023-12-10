@@ -7,13 +7,11 @@
 @using Microsoft.AspNetCore.Components.Web
 @inject SettingsService SettingsService
 
-
-
 <Title>Home</Title>
 
 <LazyLoader Load="Load">
     
-    
+    <Hero/>
     
 
 </LazyLoader>
@@ -21,13 +19,11 @@
 
 
 @code {
-
-    private string appTitle;
+    
 
     private async Task Load(LazyLoader arg)
     {
-        appTitle = SettingsService.GetByName("apptitle").Value;
-        
+
     }
 
 }

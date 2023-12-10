@@ -22,7 +22,8 @@ else
 
     protected override Task OnInitializedAsync()
     {
-        appName = SettingsService.GetByName("appname").Value;
+        appName = SettingsService.GetAppName();
+        
         return InvokeAsync(StateHasChanged);
     }
 

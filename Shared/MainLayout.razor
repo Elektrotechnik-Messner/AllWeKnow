@@ -29,7 +29,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        appName = SettingsService.GetByName("appname")!.Value!;
+        appName = SettingsService.GetAppName();
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)

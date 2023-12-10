@@ -1,39 +1,42 @@
+using AllWeKnow.App.Configuration;
 using AllWeKnow.App.Database.Models;
+using AllWeKnow.App.Configuration;
 using AllWeKnow.App.Repository;
 
 namespace AllWeKnow.App.Services;
 
 public class SettingsService
 {
-    public Repository<Setting> Settings;
+
+    private readonly ConfigService ConfigService;
+
+    private ConfigModel.SettingsData settingsData;
+
+    public SettingsService(ConfigService configService)
+    {
+        ConfigService = configService;
+        settingsData = ConfigService.Get().Settings;
+    }
+
+    public string GetAppTitle()
+    {
+        return settingsData.AppTitle;
+    }
     
+    public string GetAppName()
+    {
+        return settingsData.AppName;
+    }
     
-    public SettingsService(Repository<Setting> settings)
-    {
-        Settings = settings;
-    }
-
-    public List<Setting> GetAll()
-    {
-        return Settings.Get().ToList();
-    }
-
-    public Setting? GetByName(string name)
-    {
-        return Settings.Get().FirstOrDefault(x => x.Name == name);
-    }
-
-    public void Edit(int id, string name, string value)
+    public int GetMaxArticles()
     {
 
-        if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(value))
-            return;
-        
-        Setting setting = Settings.Get().First(x => x.Id == id);
-
-        setting.Name = name;
-        setting.Value = value;
-        
-        Settings.Update(setting);
+        return settingsData.MaxPostsShowing;
     }
+
+
+
+
+
+
 }

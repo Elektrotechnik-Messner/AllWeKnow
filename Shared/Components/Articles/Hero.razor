@@ -1,0 +1,66 @@
+@using AllWeKnow.App.Database.Models
+@using AllWeKnow.App.Services
+
+@inject ArticleService ArticleService 
+@inject SettingsService SettingsService   
+  
+@if (LoadedPost) {
+<div class="hero">
+  <h2 class="title">@AppTitle</h2>
+  <div class="featured">
+    <img
+      src="@RandomPost.TitleImage"
+      alt="Image"
+      class="image"
+    />
+    <div class="content">
+      <h2 class="title">@RandomPost.Title</h2>
+      <p class="desc">
+        @RandomPost.Description
+      </p>
+      <a href="/artikel/@RandomPost.Id"><button>Zum Artikel</button></a>
+    </div>
+  </div>
+</div> 
+}
+else
+{
+  <div class="hero">
+    <h2 class="title">@AppTitle</h2>
+    <div class="featured">
+      <img
+        src="https://images.unsplash.com/photo-1533035353720-f1c6a75cd8ab?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Image"
+        class="image"
+      />
+      <div class="content">
+        <h2 class="title">Noch nichts hier</h2>
+        <p class="desc">
+          Es sind keine Artikel vorhanden.
+        </p>
+      </div>
+    </div>
+  </div> 
+}
+
+@code {
+
+  private Article? RandomPost;
+  private string AppTitle = "";
+
+  private bool LoadedPost = true;
+
+  protected override async Task OnInitializedAsync()
+
+  {
+
+    AppTitle = SettingsService.GetAppTitle();
+    
+    RandomPost = ArticleService.GetRandom();
+    if (RandomPost == null)
+    {
+      LoadedPost = false;
+    }
+  }
+
+}

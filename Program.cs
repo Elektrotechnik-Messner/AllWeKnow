@@ -24,6 +24,8 @@ Directory.CreateDirectory(PathBuilder.Dir("storage"));
 // Database
 builder.Services.AddDbContext<DataContext>();
 
+// TODO: Add Auto Update Migrations
+
 builder.Services.AddScoped(typeof(Repository<>));
 
 // Users

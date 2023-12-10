@@ -19,8 +19,7 @@ public class DataContext : DbContext
     public DbSet<User>? Users { get; set; }
     public DbSet<Article>? Articles { get; set; }
     public DbSet<Subject>? Subjects { get; set; }
-    public DbSet<Setting>? Settings { get; set; }
-    
+
     public DataContext(ConfigService configService)
     {
         ConfigService = configService;
