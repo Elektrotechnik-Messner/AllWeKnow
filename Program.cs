@@ -8,6 +8,11 @@ using AllWeKnow.App.Services.Partials;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Logging.Net;
+
+
+// setup logger
+Logger.UseSBLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,8 +27,14 @@ builder.Services.AddSingleton<ConfigService>();
 
 Directory.CreateDirectory(PathBuilder.Dir("storage"));
 
+Logger.Info("Successfully initialised the configuration");
+
 // Database
 builder.Services.AddDbContext<DataContext>();
+
+
+
+
 
 // TODO: Add Auto Update Migrations
 
@@ -31,15 +42,19 @@ builder.Services.AddScoped(typeof(Repository<>));
 
 // Users
 builder.Services.AddScoped<UserService>();
+Logger.Info("Successfully initialised the UserService");
 // Articles
 builder.Services.AddScoped<ArticleService>();  
+Logger.Info("Successfully initialised the ArticleService");
 // Subjects
 builder.Services.AddScoped<SubjectService>();
+Logger.Info("Successfully initialised the SubjectService");
 // Settings
 builder.Services.AddScoped<SettingsService>();
+Logger.Info("Successfully initialised the SettingsService");
 // Jokes
 builder.Services.AddScoped<JokeService>();
-
+Logger.Info("Successfully added all Services, building Application now.");
 var app = builder.Build();
 
 
