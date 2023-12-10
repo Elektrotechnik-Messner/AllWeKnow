@@ -10,7 +10,7 @@ using AllWeKnow.App.Configuration;
 using AllWeKnow.App.Helpers;
 using Newtonsoft.Json;
 
-namespace AllWeKnow.App.Services;
+namespace AllWeKnow.App.Configuration;
 
 public class ConfigService
 {

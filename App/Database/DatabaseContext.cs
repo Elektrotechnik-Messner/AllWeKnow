@@ -6,6 +6,7 @@
  * LICENSE.md https://github.com/Moonlight-Panel/Moonlight/blob/main/LICENSE.md
  */
 
+using AllWeKnow.App.Configuration;
 using AllWeKnow.App.Database.Models;
 using AllWeKnow.App.Services;
 using Logging.Net;
@@ -29,20 +30,20 @@ public class DataContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
-            {
-                var config = ConfigService.Get().Database;
-                
-                var connectionString = $"host={config.Host};" +
-                                       $"port={config.Port};" +
-                                       $"database={config.Database};" +
-                                       $"uid={config.Username};" +
-                                       $"pwd={config.Password}";
-                
-                optionsBuilder.UseMySql(
-                    connectionString,
-                    ServerVersion.AutoDetect(connectionString),
-                    builder => builder.EnableRetryOnFailure(5)
-                );
-            }
+        {
+            var config = ConfigService.Get().Database;
+            
+            var connectionString = $"host={config.Host};" +
+                                   $"port={config.Port};" +
+                                   $"database={config.Database};" +
+                                   $"uid={config.Username};" +
+                                   $"pwd={config.Password}";
+            
+            optionsBuilder.UseMySql(
+                connectionString,
+                ServerVersion.AutoDetect(connectionString),
+                builder => builder.EnableRetryOnFailure(5)
+            );
+        }
         }
     }

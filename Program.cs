@@ -4,11 +4,20 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using AllWeKnow.App.Services;
 using AllWeKnow.App.Repository;
+using AllWeKnow.App.Configuration;
 using AllWeKnow.App.Services.Partials;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Logging.Net;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+
+
+DatabaseCheckup databaseCheckup;
+
+var configService = new ConfigService();
+
+databaseCheckup = new(configService);
 
 
 // setup logger
@@ -30,6 +39,8 @@ Directory.CreateDirectory(PathBuilder.Dir("storage"));
 Logger.Info("Successfully initialised the configuration");
 
 // Database
+await databaseCheckup.Perform();
+
 builder.Services.AddDbContext<DataContext>();
 
 
