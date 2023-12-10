@@ -7,16 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03f04c24-2969-4cd9-8b9f-dbb6d9bf704c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Shared/Components/Articles/Hero.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Configuration/ConfigModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Configuration/ConfigModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Services/SettingsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Services/SettingsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/Components/Partials/Title.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Components/Partials/Title.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/MainLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/_Imports.razor" afterDir="false" />
-    </list>
+    <list default="true" id="03f04c24-2969-4cd9-8b9f-dbb6d9bf704c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,7 +156,7 @@
       <workItem from="1702047834504" duration="6573000" />
       <workItem from="1702124363923" duration="35000" />
       <workItem from="1702169338584" duration="2092000" />
-      <workItem from="1702171465148" duration="611000" />
+      <workItem from="1702171465148" duration="1586000" />
     </task>
     <servers />
   </component>

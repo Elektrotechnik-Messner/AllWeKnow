@@ -4,9 +4,9 @@
     <option name="keyValueStorage">
       <map>
         <entry key="Common:a1d9df9e-964a-4b0f-a58f-177aa2e06bbb:dbContext" value="AllWeKnow.App.Database.DataContext" />
-        <entry key="Common:buildConfiguration" value="Debug" />
+        <entry key="Common:buildConfiguration" value="Release" />
         <entry key="Common:noBuild" value="false" />
-        <entry key="Common:outputFolder" value="Migrations" />
+        <entry key="Common:outputFolder" value="App\Database\Migrations" />
         <entry key="Common:targetFramework" value="net6.0" />
         <entry key="Common:useDefaultConnection" value="true" />
       </map>
