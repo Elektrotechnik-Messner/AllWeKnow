@@ -13,11 +13,11 @@ using Logging.Net;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 
 
-DatabaseCheckup databaseCheckup;
+
 
 var configService = new ConfigService();
 
-databaseCheckup = new(configService);
+DatabaseCheckup databaseCheckup = new (configService);
 
 
 // setup logger
@@ -43,11 +43,6 @@ await databaseCheckup.Perform();
 
 builder.Services.AddDbContext<DataContext>();
 
-
-
-
-
-// TODO: Add Auto Update Migrations
 
 builder.Services.AddScoped(typeof(Repository<>));
 
