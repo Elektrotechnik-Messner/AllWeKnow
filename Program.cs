@@ -14,10 +14,14 @@ using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 
 
 
+ConfigHelper configHelper = new();
+
+await configHelper.Perform();
 
 var configService = new ConfigService();
 
 DatabaseCheckup databaseCheckup = new (configService);
+
 
 
 // setup logger
@@ -32,9 +36,9 @@ builder.Services.AddServerSideBlazor();
 
 //Services
 
-builder.Services.AddSingleton<ConfigService>();
 
-Directory.CreateDirectory(PathBuilder.Dir("storage"));
+
+builder.Services.AddSingleton<ConfigService>();
 
 Logger.Info("Successfully initialised the configuration");
 
