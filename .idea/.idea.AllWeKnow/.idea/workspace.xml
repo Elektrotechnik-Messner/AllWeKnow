@@ -8,9 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03f04c24-2969-4cd9-8b9f-dbb6d9bf704c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/App/Helpers/ConfigHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Database/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Database/DatabaseContext.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,8 +71,8 @@
       "Angular2Svg"
     ],
     "rider.external.source.directories": [
-      "C:\\Users\\morit\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\morit\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\morit\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\morit\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
       "C:\\Users\\morit\\AppData\\Local\\Symbols\\src"
     ]
   }
@@ -166,6 +165,7 @@
       <workItem from="1702205832041" duration="2599000" />
       <workItem from="1702562002650" duration="1696000" />
       <workItem from="1702650050574" duration="3473000" />
+      <workItem from="1703328225389" duration="299000" />
     </task>
     <servers />
   </component>

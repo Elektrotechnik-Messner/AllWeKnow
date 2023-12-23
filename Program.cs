@@ -14,27 +14,22 @@ using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 
 
 
+// setup logger
+Logger.UseSBLogger();
+
 ConfigHelper configHelper = new();
 
 await configHelper.Perform();
 
-var configService = new ConfigService();
-
-DatabaseCheckup databaseCheckup = new (configService);
-
-
-
-// setup logger
-Logger.UseSBLogger();
+ConfigService configService = new();
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-// Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
-//Services
+// Services
 
 
 
@@ -43,6 +38,8 @@ builder.Services.AddSingleton<ConfigService>();
 Logger.Info("Successfully initialised the configuration");
 
 // Database
+
+DatabaseCheckup databaseCheckup = new (configService);
 await databaseCheckup.Perform();
 
 builder.Services.AddDbContext<DataContext>();
@@ -51,23 +48,29 @@ builder.Services.AddDbContext<DataContext>();
 builder.Services.AddScoped(typeof(Repository<>));
 
 // Users
+
 builder.Services.AddScoped<UserService>();
 Logger.Info("Successfully initialised the UserService");
+
 // Articles
+
 builder.Services.AddScoped<ArticleService>();  
 Logger.Info("Successfully initialised the ArticleService");
+
 // Subjects
+
 builder.Services.AddScoped<SubjectService>();
 Logger.Info("Successfully initialised the SubjectService");
+
 // Settings
 builder.Services.AddScoped<SettingsService>();
 Logger.Info("Successfully initialised the SettingsService");
+
 // Jokes
 builder.Services.AddScoped<JokeService>();
 Logger.Info("Successfully added all Services, building Application now.");
+
 var app = builder.Build();
-
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

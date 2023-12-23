@@ -37,10 +37,21 @@ public class DataContext : DbContext
                                $"database={config.Database};" +
                                $"uid={config.Username};" +
                                $"pwd={config.Password}";
-                
+
+        ServerVersion Version;
+        try
+        {
+            Version = ServerVersion.AutoDetect(connectionString);
+        }
+        catch (Exception e)
+        {
+            Version = ServerVersion.Parse("5.7.37-mysql");
+        }
+        
+        
         optionsBuilder.UseMySql(
             connectionString,
-            ServerVersion.AutoDetect(connectionString),
+            Version,
             builder => builder.EnableRetryOnFailure(5)
         );
     }
