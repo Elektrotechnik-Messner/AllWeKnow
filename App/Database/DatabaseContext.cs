@@ -38,20 +38,20 @@ public class DataContext : DbContext
                                $"uid={config.Username};" +
                                $"pwd={config.Password}";
 
-        ServerVersion Version;
+        ServerVersion version;
         try
         {
-            Version = ServerVersion.AutoDetect(connectionString);
+            version = ServerVersion.AutoDetect(connectionString);
         }
         catch (Exception e)
         {
-            Version = ServerVersion.Parse("5.7.37-mysql");
+            version = ServerVersion.Parse("5.7.37-mysql");
         }
         
         
         optionsBuilder.UseMySql(
             connectionString,
-            Version,
+            version,
             builder => builder.EnableRetryOnFailure(5)
         );
     }
