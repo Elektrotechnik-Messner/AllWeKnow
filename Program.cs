@@ -84,6 +84,9 @@ builder.Services.AddScoped<JokeService>();
 Logger.Info("Successfully added all Services, building Application now.");
 
 
+// Helpers
+builder.Services.AddSingleton<MarkupHelper>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
