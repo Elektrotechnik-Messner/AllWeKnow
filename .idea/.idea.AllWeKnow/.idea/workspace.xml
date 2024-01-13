@@ -8,11 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03f04c24-2969-4cd9-8b9f-dbb6d9bf704c" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/App/Helpers/MarkupHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/Components/Editor/TextEditor.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Components/Editor/TextEditor.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/Pages/Test.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Pages/Test.razor" afterDir="false" />
+=======
+<<<<<<< Updated upstream
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Services/Articles/ArticleService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Services/Articles/ArticleService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Pages/Index.razor" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/Shared/Pages/Articles/NewArticle.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
