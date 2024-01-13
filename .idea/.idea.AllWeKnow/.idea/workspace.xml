@@ -8,8 +8,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03f04c24-2969-4cd9-8b9f-dbb6d9bf704c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/App/Auth/AuthStateProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Database/Migrations/20231224111311_AddUser.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Database/Migrations/20231224111311_AddUser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Database/Migrations/20231224111505_EditUser.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Database/Migrations/20231224111505_EditUser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Database/Migrations/20240113142940_FixUsers.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Database/Migrations/20240113142940_FixUsers.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Models/Form.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/App/Models/Session.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shared/Components/Editor/TextEditor.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shared/Pages/Auth/Login.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shared/Pages/Test.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wwwroot/resources/js/ckeditor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AllWeKnow/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Database/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Database/DatabaseContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AllWeApp.razor" beforeDir="false" afterPath="$PROJECT_DIR$/AllWeApp.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AllWeKnow.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AllWeKnow.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Database/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Database/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Database/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Database/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Services/Articles/ArticleService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Services/Articles/ArticleService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/App/Services/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Components/Nav/NavBar.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Components/Nav/NavBar.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/resources/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/resources/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +43,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -54,7 +78,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ToolWindowBuild.ShowToolbar": "false",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Auth",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "/home/papagei/Dokumente/GitHub/Elektrtechnik-Messner/AllWeKnow",
     "list.type.of.created.stylesheet": "CSS",
@@ -63,7 +87,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -167,6 +191,16 @@
       <workItem from="1702650050574" duration="3473000" />
       <workItem from="1703328225389" duration="584000" />
       <workItem from="1703414190183" duration="574000" />
+      <workItem from="1703414772201" duration="123000" />
+      <workItem from="1703414965554" duration="616000" />
+      <workItem from="1703415737642" duration="1989000" />
+      <workItem from="1703669240738" duration="631000" />
+      <workItem from="1703865305057" duration="2121000" />
+      <workItem from="1703888586373" duration="4561000" />
+      <workItem from="1703954852335" duration="211000" />
+      <workItem from="1704272420353" duration="30000" />
+      <workItem from="1704291083397" duration="1000" />
+      <workItem from="1705153629156" duration="2555000" />
     </task>
     <servers />
   </component>

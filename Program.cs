@@ -1,3 +1,4 @@
+using AllWeKnow.App.Auth;
 using AllWeKnow.App.Database;
 using AllWeKnow.App.Helpers;
 using Microsoft.AspNetCore.Components;
@@ -10,6 +11,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Logging.Net;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 
 
@@ -52,10 +55,20 @@ builder.Services.AddScoped(typeof(Repository<>));
 builder.Services.AddScoped<UserService>();
 Logger.Info("Successfully initialised the UserService");
 
+// Auth
+builder.Services.AddAuthenticationCore();
+builder.Services.AddScoped<ProtectedSessionStorage>();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+
 // Articles
 
 builder.Services.AddScoped<ArticleService>();  
 Logger.Info("Successfully initialised the ArticleService");
+
+builder.Services.AddSignalR(e => {
+    e.MaximumReceiveMessageSize = 2 * 1024 * 1024;
+});
+
 
 // Subjects
 
@@ -69,6 +82,7 @@ Logger.Info("Successfully initialised the SettingsService");
 // Jokes
 builder.Services.AddScoped<JokeService>();
 Logger.Info("Successfully added all Services, building Application now.");
+
 
 var app = builder.Build();
 

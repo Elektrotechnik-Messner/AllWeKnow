@@ -1,4 +1,6 @@
+@using AllWeKnow.App.Auth
 @inject NavigationManager NavManager
+@inject AuthenticationStateProvider AuthStateProvider
 
 <nav class="navbar">
       <div class="content">
@@ -18,7 +20,17 @@
             <a href="/">Home</a>
             <a href="/alle-artikel">Alle Artikel</a>
             <a href="/alle-fächer">Alle Fächer</a>
-            <a href="/test"><button>Login</button></a>
+            
+            <AuthorizeView Roles="student,teacher,admin">
+              <Authorized>
+                <a href="/meine-artikel">Meine Artikel</a>
+                
+                <a @onclick="Logout" title="@context.User.Identity.Name" href="javascript:void(0)"><button>Logout</button></a>
+              </Authorized>
+              <NotAuthorized>
+                <a href="/login"><button>Login</button></a>
+              </NotAuthorized>
+            </AuthorizeView>
 
             
           </div>
@@ -38,4 +50,11 @@
     Unfolded = !Unfolded;
   }
 
+  private async Task Logout()
+  {
+    var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
+    await customAuthStateProvider.UpdateAuthenticationState(null);
+    NavManager.NavigateTo("/", true);
+  }
+  
 }

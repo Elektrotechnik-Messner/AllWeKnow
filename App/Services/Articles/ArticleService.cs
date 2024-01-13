@@ -25,7 +25,7 @@ public class ArticleService
 
     public Article? GetById(int id)
     {
-        return Articles.Get().First(x => x.Id == id)!;
+        return Articles.Get().FirstOrDefault(x => x.Id == id)!;
     }
 
     public Article? GetRandom(int status = 1) {
@@ -38,7 +38,7 @@ public class ArticleService
         if (allIds.Count == 0) 
             return null;
 
-        randomArticle = Articles.Get().FirstOrDefault(x => x.Id == allIds[random.Next(allIds.Count)] && x.Status == status)!;
+        randomArticle = Articles.Get().FirstOrDefault(x => x.Id == allIds[random.Next(allIds.Count)])!;
         
         return randomArticle;
     }
