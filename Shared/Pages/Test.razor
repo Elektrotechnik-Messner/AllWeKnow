@@ -2,15 +2,17 @@
 
 @using AllWeKnow.App.Models
 
+<Title>Test</Title>
+
 <h3>Test</h3>
 
 
+
 <EditForm Model="form">
-    <TextEditor @bind-Value="form.Content" InitialContent="A well written post content from you" Styles="height: 55vh"/>
+    <TextEditor @bind-Value="form.Content" InitialContent="<b>A well written post content from you</b>" Styles="height: 55vh"/>
 
 </EditForm>
 
-@form.Content
 
 @code {
 

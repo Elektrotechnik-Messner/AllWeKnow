@@ -2,7 +2,10 @@
 @using Logging.Net
 @using AllWeKnow.App.Services
 @using Ganss.Xss
+@using AllWeKnow.App.Helpers
 @inherits InputBase<string>
+
+@inject MarkupHelper MarkupHelper
 
 <style>
     :root {
@@ -119,8 +122,8 @@
     
 </style>
 
-
 <div id="@Id" class="@(CssClasses)" @onfocusout="Callback" style="@(Styles)">
+    @MarkupHelper.ToMarkupString(InitialContent)
 </div>
 
 @code
@@ -146,10 +149,8 @@
     {
         if (firstRender)
         {
-            Console.WriteLine(Id);
             await JsRuntime.InvokeVoidAsync("js.textEditor.create", Id);
-            Console.WriteLine(Id);
-            await JsRuntime.InvokeVoidAsync("js.textEditor.set", Id, InitialContent);
+            /*await JsRuntime.InvokeVoidAsync("js.textEditor.set", Id, InitialContent);*/
             CurrentValue = InitialContent;
             IsInitialized = true;
         }
