@@ -38,7 +38,10 @@ public class ArticleService
         if (allIds.Count == 0) 
             return null;
 
-        randomArticle = Articles.Get().FirstOrDefault(x => x.Id == allIds[random.Next(allIds.Count)])!;
+
+        var randomId = allIds[random.Next(allIds.Count)];
+        
+        randomArticle = Articles.Get().FirstOrDefault(x => x.Id == randomId);
         
         return randomArticle;
     }
