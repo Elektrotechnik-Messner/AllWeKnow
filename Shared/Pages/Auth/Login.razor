@@ -1,0 +1,68 @@
+@page "/login"
+@using AllWeKnow.App.Services
+@using AllWeKnow.App.Auth
+@using AllWeKnow.App.Models
+
+@inject NavigationManager NavManager
+
+@inject UserService UserService
+@inject AuthenticationStateProvider AuthStateProvider
+@inject IJSRuntime Js
+
+<Title>Login</Title>
+
+<AuthorizeView>
+    <Authorized>
+        @{
+            NavManager.NavigateTo("/", true);
+        }
+    </Authorized>
+</AuthorizeView>
+
+<div class="login">
+    <span class="text">Login</span>
+    <input
+        type="text"
+        @bind="_model.UserName"
+        name=""
+        placeholder="Benutzername"
+    />
+    <input
+        type="password"
+        @bind="_model.Password"
+        name=""
+        placeholder="Passwort"
+    />
+    <button type="submit" @onclick="Authenticate">Login</button>
+</div>
+
+@code {
+    private class Model
+    {
+        public string UserName { get; set; } = null!;
+        public string Password { get; set; }= null!;
+    }
+
+    private Model _model = new Model();
+
+    private async Task Authenticate()
+    {
+        var userAccount = UserService.GetByUserName(_model.UserName);
+        if (userAccount == null || userAccount.Password != _model.Password)
+        {
+            await Js.InvokeVoidAsync("alert", "Falsches Passwort oder Benutzername");
+            return;
+        }
+
+        var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
+        await customAuthStateProvider.UpdateAuthenticationState(new Session()
+        {
+            Id = userAccount.Id,
+            UserName = userAccount.Username!,
+            FullName = userAccount.Fullname!,
+            Role = userAccount.Role!
+        });
+        NavManager.NavigateTo("/", true);
+        Console.WriteLine("Logged in as " + userAccount.Fullname);
+    }
+}

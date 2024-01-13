@@ -1,0 +1,23 @@
+@page "/Test"
+
+@using AllWeKnow.App.Models
+
+<h3>Test</h3>
+
+
+<EditForm Model="form">
+    <TextEditor @bind-Value="form.Content" InitialContent="A well written post content from you" Styles="height: 55vh"/>
+
+</EditForm>
+
+@form.Content
+
+@code {
+
+    Form form = new Form()
+    {
+        Content = "",
+        Thing = ""
+    };
+    
+}

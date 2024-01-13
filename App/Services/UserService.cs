@@ -17,8 +17,13 @@ public class UserService
         return Users.Get().ToList();
     } 
     
-    public User GetUserById(int id)
+    public User? GetUserById(int id)
     {
         return Users.Get().FirstOrDefault(x => x.Id == id);
-    }                               
+    }
+
+    public User? GetByUserName(string userName)
+    {
+        return Users.Get().FirstOrDefault(x => x.Username == userName);
+    }
 }
