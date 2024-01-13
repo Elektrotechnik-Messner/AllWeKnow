@@ -26,4 +26,8 @@
       <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Shared\Components\Editor\TextEditor.razor" />
+    </ItemGroup>
+
 </Project>

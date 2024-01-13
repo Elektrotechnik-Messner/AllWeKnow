@@ -1,6 +1,8 @@
 @page "/Test"
 
 @using AllWeKnow.App.Models
+@using AllWeKnow.App.Helpers
+@inject MarkupHelper MarkupHelper
 
 <Title>Test</Title>
 
@@ -8,10 +10,40 @@
 
 
 
+@*
 <EditForm Model="form">
     <TextEditor @bind-Value="form.Content" InitialContent="<b>A well written post content from you</b>" Styles="height: 55vh"/>
-
 </EditForm>
+*@
+
+
+
+
+<EditForm Model="@exampleModel" OnValidSubmit="@HandleValidSubmit">
+
+    <InputRichText @bind-Value="exampleModel.Content" maxlength="2048" style="width:100%;height:150px;" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+    @code {
+
+        private Form exampleModel = new Form();
+
+        protected override async Task OnInitializedAsync()
+        {
+            exampleModel.Content = "BBB";
+        }
+
+        private void HandleValidSubmit()
+        {
+            Console.WriteLine("Submit pressed");
+            Console.WriteLine(exampleModel.Content);
+        }
+    }
+
+
+@*@form.Content
 
 
 @code {
@@ -21,5 +53,4 @@
         Content = "",
         Thing = ""
     };
-    
-}
+}*@
