@@ -25,6 +25,7 @@
       </PackageReference>
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.2" />
+      <PackageReference Include="WYSIWYGTextEditor" Version="1.0.1" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,9 +1,12 @@
 @page "/Test"
+@using WYSIWYGTextEditor
 
-@using AllWeKnow.App.Models
-@using AllWeKnow.App.Helpers
-@inject MarkupHelper MarkupHelper
+<TextEditor>
+        <EditorContent>
+            <h4>This Toolbar works with HTML</h4>
+            <a href="http://BlazorHelpWebsite.com">
+            BlazorHelpWebsite.com</a>
+        </EditorContent>
+</TextEditor>
 
 <Title>Test</Title>
-
-<h3>Test</h3>
