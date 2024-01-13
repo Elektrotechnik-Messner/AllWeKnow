@@ -1,10 +1,50 @@
 @page "/Test"
 @using WYSIWYGTextEditor
+@using HtmlAgilityPack
+@using AllWeKnow.Shared.Components
+@using AllWeKnow.Shared.Components.Partials
+@using WYSIWYGTextEditor
 
-<TextEditor>
+<TextEditor @ref="@Editor">
         <EditorContent>
-            <img src="https://images.unsplash.com/photo-1682685797168-613fd0cae41d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+            <Images/>
         </EditorContent>
 </TextEditor>
 
+
+<button @onclick="Save">Save</button>
+
 <Title>Test</Title>
+
+@code {
+
+    TextEditor Editor;
+    HtmlDocument document = new();
+    
+    public void Save()
+    {
+        Console.Write("saving");
+        string? content = Editor.GetHTML().ToString();
+
+        
+        // does not work
+        document.LoadHtml(content);
+        document.DocumentNode.Descendants("img")
+            .Where(e =>
+            {
+                //  
+                var src = e.GetAttributeValue("src", null) ?? "";
+                return !string.IsNullOrEmpty(src) && src.StartsWith("data:image");
+            })
+            .ToList()
+            .ForEach(x =>
+            {
+                var source = x.GetAttributeValue("src", null);
+
+                Console.Write(source);
+            });
+    }
+    
+    
+    
+}
