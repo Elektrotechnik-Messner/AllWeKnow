@@ -23,11 +23,8 @@
     
     private async Task Save()
     {
-        Console.WriteLine("saving");
         var content = await Editor.GetHTML();
-
         
-        // does not work
 
         document.LoadHtml(content);
         document.DocumentNode.Descendants("img")
@@ -35,8 +32,6 @@
             .ForEach(async x =>
             {
                 var source = x.GetAttributeValue("src", null);
-
-                Console.WriteLine(source.Substring(0, 20));
 
                 switch (source.Substring(0, 15))
                 {
