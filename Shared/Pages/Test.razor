@@ -21,29 +21,59 @@
     TextEditor Editor;
     HtmlDocument document = new();
     
-    public void Save()
+    private async Task Save()
     {
-        Console.Write("saving");
-        string? content = Editor.GetHTML().ToString();
+        Console.WriteLine("saving");
+        var content = await Editor.GetHTML();
 
         
         // does not work
+
         document.LoadHtml(content);
         document.DocumentNode.Descendants("img")
-            .Where(e =>
-            {
-                //  
-                var src = e.GetAttributeValue("src", null) ?? "";
-                return !string.IsNullOrEmpty(src) && src.StartsWith("data:image");
-            })
             .ToList()
-            .ForEach(x =>
+            .ForEach(async x =>
             {
                 var source = x.GetAttributeValue("src", null);
 
-                Console.Write(source);
+                Console.WriteLine(source.Substring(0, 20));
+
+                switch (source.Substring(0, 15))
+                {
+                    case "data:image/jpeg":
+                        await JPGHandler(source);
+                        break;
+                    case "data:image/jpg;":
+                        await JPGHandler(source);
+                        break;
+                    case "data:image/png;":
+                        await PNGHandler(source);
+                        break;
+                }
             });
+
     }
+
+    static Task JPGHandler(string src)
+    {
+        // Do the converting here for jpg/jpeg images
+        // Attention: There can be sources with "data:image/jpeg" and "data:image/jpg"
+        Console.WriteLine("handling jpg");
+        
+        
+        return Task.CompletedTask;
+    }
+    
+    private Task PNGHandler(string src)
+    {
+        // Do the converting here for png images
+        Console.WriteLine("handling png");
+        
+        
+        return Task.CompletedTask;
+    }
+    
+    
     
     
     

@@ -11,7 +11,7 @@ var toolbarOptions = [
     
 
     [{ 'color': [] }, { 'background': [] }],
-    ['formula'],
+    ['formula', 'image'],
     [{ 'font': [] }],
     [{ 'align': [] }],
 
