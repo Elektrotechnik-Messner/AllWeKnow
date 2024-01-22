@@ -15,6 +15,11 @@ public class ConfigHelper
         Logger.Info("Checking config file");
         var path = PathBuilder.File("storage", "config.json");
 
+        if (!Directory.Exists(PathBuilder.Dir("storage")))
+        {
+            Directory.CreateDirectory(PathBuilder.Dir("storage"));
+        }
+        
         if (File.Exists(path))
         {
             Logger.Info("Config file exists, continuing startup");
