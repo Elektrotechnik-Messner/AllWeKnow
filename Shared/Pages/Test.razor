@@ -59,11 +59,14 @@
                 using MemoryStream ms = new MemoryStream(bytes);
                 ms.CopyTo(fs);
 
+                filePath = filePath.Replace(PathBuilder.Dir("wwwroot"), "");
+                
                 x.SetAttributeValue("src", filePath);
                 
             });
 
         var finalString = document.DocumentNode.InnerHtml;
+        Console.WriteLine(finalString);
 
     }
 
