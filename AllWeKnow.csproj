@@ -8,7 +8,7 @@
 
     <ItemGroup>
       <Folder Include="Shared\Pages\Articles\" />
-      <Folder Include="storage\" />
+      <Folder Include="wwwroot\bucket\images\" />
     </ItemGroup>
 
     <ItemGroup>

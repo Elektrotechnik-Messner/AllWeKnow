@@ -4,6 +4,11 @@
 @using AllWeKnow.Shared.Components
 @using AllWeKnow.Shared.Components.Partials
 @using WYSIWYGTextEditor
+@using AllWeKnow.App.Helpers
+@using System.Drawing
+@using System.Drawing.Imaging
+@using System.Net.Mime
+
 
 <TextEditor @ref="@Editor">
         <EditorContent>
@@ -20,11 +25,11 @@
 
     TextEditor Editor;
     HtmlDocument document = new();
-    
+
     private async Task Save()
     {
         var content = await Editor.GetHTML();
-        
+
 
         document.LoadHtml(content);
         document.DocumentNode.Descendants("img")
@@ -32,44 +37,34 @@
             .ForEach(async x =>
             {
                 var source = x.GetAttributeValue("src", null);
-
-                switch (source.Substring(0, 15))
+                string fileType = source[..15] switch
                 {
-                    case "data:image/jpeg":
-                        await JPGHandler(source);
-                        break;
-                    case "data:image/jpg;":
-                        await JPGHandler(source);
-                        break;
-                    case "data:image/png;":
-                        await PNGHandler(source);
-                        break;
+                    "data:image/jpeg" => "jpeg",
+                    "data:image/jpg;" => "jpg",
+                    "data:image/png;" => "png",
+                    _ => ""
+                };
+
+                if (fileType == "")
+                {
+                    return;
                 }
+
+                var fileName = Path.GetRandomFileName() + "." + fileType;
+                var filePath = PathBuilder.File("wwwroot", "bucket", "images", fileName);
+
+                byte[] bytes = Convert.FromBase64String(source.Replace("data:image/"+fileType+";base64,", ""));
+
+                await using FileStream fs = new(filePath, FileMode.Create);
+                using MemoryStream ms = new MemoryStream(bytes);
+                ms.CopyTo(fs);
+
+                x.SetAttributeValue("src", filePath);
+                
             });
 
+        var finalString = document.DocumentNode.InnerHtml;
+
     }
 
-    static Task JPGHandler(string src)
-    {
-        // Do the converting here for jpg/jpeg images
-        // Attention: There can be sources with "data:image/jpeg" and "data:image/jpg"
-        Console.WriteLine("handling jpg");
-        
-        
-        return Task.CompletedTask;
-    }
-    
-    private Task PNGHandler(string src)
-    {
-        // Do the converting here for png images
-        Console.WriteLine("handling png");
-        
-        
-        return Task.CompletedTask;
-    }
-    
-    
-    
-    
-    
 }
