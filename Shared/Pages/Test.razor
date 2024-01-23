@@ -53,17 +53,15 @@
                 }
 
                 var fileName = Path.GetRandomFileName() + "." + fileType;
-                var filePath = PathBuilder.File("wwwroot", "bucket", "images", fileName);
+                string filePath = PathBuilder.File("wwwroot", "bucket", "images", fileName);
 
                 var bytes = Convert.FromBase64String(source.Replace("data:image/"+fileType+";base64,", ""));
 
                 await using FileStream fs = new(filePath, FileMode.Create);
                 using var ms = new MemoryStream(bytes);
                 await ms.CopyToAsync(fs);
-
-                filePath = filePath.Replace(PathBuilder.Dir("wwwroot"), "");
                 
-                x.SetAttributeValue("src", filePath);
+                x.SetAttributeValue("src", filePath.Replace(PathBuilder.Dir("wwwroot"), ""));
                 
             });
 
