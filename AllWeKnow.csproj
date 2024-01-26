@@ -9,7 +9,6 @@
     <ItemGroup>
       <Folder Include="Shared\Pages\Articles\" />
       <Folder Include="wwwroot\bucket\images\" />
-      <Folder Include="wwwroot\resources\css\" />
     </ItemGroup>
 
     <ItemGroup>
