@@ -33,7 +33,8 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider
                     var claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, userSession.UserName),
-                        new Claim(ClaimTypes.Role, userSession.Role)
+                        new Claim(ClaimTypes.Role, userSession.Role),
+                        new Claim(ClaimTypes.NameIdentifier, userSession.Id.ToString())
                     }, "s3cr3t"));
                     return await Task.FromResult(new AuthenticationState(claimsPrincipal));
                 }
